@@ -7,28 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-
-    </header>
-    <main>
-        <section>
-            <form id="form-election">
+    <section>
+        <form id="form-election">
+            <div>
                 <div class="player-election">
                     <label for="player-one-x">X</label>
                     <input type="radio" name="player-one" id="player-one-x" class="X">
                     <label for="player-one-o">O</label>
                     <input type="radio" name="player-one" id="player-one-o" class="O">
                 </div>
-                <div class="player-election">
-                    <label for="player-two-x">X</label>
-                    <input type="radio" name="player-two" id="player-two-x" class="X">
-                    <label for="player-two-o">O</label>
-                    <input type="radio" name="player-two" id="player-two-o" class="O">
+                <div class="player-or-cpu-one">
+                    <label for="one-player">Player</label>
+                    <input type="radio" name="manage-one" id="one-player" class="Player">
+                    <label for="one-cpu">CPU</label>
+                    <input type="radio" name="manage-one" id="one-cpu" class="CPU">
                 </div>
-                <button type="submit" id="btn-play">PLAY</button>
-            </form>
-        </section>
-
+            </div>
+            <div class="player-election">
+                <label for="player-two-x">X</label>
+                <input type="radio" name="player-two" id="player-two-x" class="X">
+                <label for="player-two-o">O</label>
+                <input type="radio" name="player-two" id="player-two-o" class="O">
+            </div>
+            <div class="player-or-cpu-two">
+                <label for="two-player">Player</label>
+                <input type="radio" name="manage-two" id="two-player" class="Player">
+                <label for="two-cpu">CPU</label>
+                <input type="radio" name="manage-two" id="two-cpu" class="CPU">
+            </div>
+            <button type="submit" id="btn-play">PLAY</button>
+        </form>
+    </section>
+    <main>
         <section class="grid-container">
             <ul class="row1">
                 <li class="grid-cell r1c1"></li>
@@ -48,7 +58,7 @@
         </section>
     </main>
     <footer>
-
+        <p>Copyright © Valentín Taverna</p>
     </footer>
 </body>
 <script src="script.js"></script>

@@ -16,3 +16,7 @@ The game is built using the following technologies:
 - HTML
 - CSS
 - JavaScript
+
+# Live preview
+
+You can check a live preview [here](https://valentave.github.io/tic-tac-toe/)

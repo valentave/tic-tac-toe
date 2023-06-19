@@ -7,53 +7,88 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section>
+    <section class="form-section">
+        <h1 class="form-h1">Choose the marks:</h1>
         <form id="form-election">
             <div>
+                <h3 class="form-h3-one">Player one</h3>
                 <div class="player-election">
-                    <label for="player-one-x">X</label>
-                    <input type="radio" name="player-one" id="player-one-x" class="X">
-                    <label for="player-one-o">O</label>
-                    <input type="radio" name="player-one" id="player-one-o" class="O">
+                    <input type="radio" name="player-one" id="player-one-belgrano" class="belgrano" required>
+                    <label for="player-one-belgrano"><img src="assets/img/belgrano.webp" alt=""></label>
+                    <input type="radio" name="player-one" id="player-one-boca" class="boca" required>
+                    <label for="player-one-boca"><img src="assets/img/boca.webp" alt=""></label>
+                    <input type="radio" name="player-one" id="player-one-central" class="central" required>
+                    <label for="player-one-central"><img src="assets/img/central.webp" alt=""></label>
+                    <input type="radio" name="player-one" id="player-one-independiente" class="independiente" required>
+                    <label for="player-one-independiente"><img src="assets/img/independiente.webp" alt=""></label>
+                    <input type="radio" name="player-one" id="player-one-newells" class="newells" required>
+                    <label for="player-one-newells"><img src="assets/img/newells.webp" alt=""></label>
+                    <input type="radio" name="player-one" id="player-one-racing" class="racing" required>
+                    <label for="player-one-racing"><img src="assets/img/racing.webp" alt=""></label>
+                    <input type="radio" name="player-one" id="player-one-river" class="river" checked required>
+                    <label for="player-one-river"><img src="assets/img/river.webp" alt=""></label>
+                    <input type="radio" name="player-one" id="player-one-sanlorenzo" class="sanlorenzo" required>
+                    <label for="player-one-sanlorenzo"><img src="assets/img/sanlorenzo.webp" alt=""></label>
+                    <input type="radio" name="player-one" id="player-one-talleres" class="talleres" required>
+                    <label for="player-one-talleres"><img src="assets/img/talleres.webp" alt=""></label>
                 </div>
-                <div class="player-or-cpu-one">
+                <div class="player-or-cpu">
+                    <input type="radio" name="manage-one" id="one-player" class="Player" checked>
                     <label for="one-player">Player</label>
-                    <input type="radio" name="manage-one" id="one-player" class="Player">
-                    <label for="one-cpu">CPU</label>
                     <input type="radio" name="manage-one" id="one-cpu" class="CPU">
+                    <label for="one-cpu">CPU</label>
                 </div>
             </div>
-            <div class="player-election">
-                <label for="player-two-x">X</label>
-                <input type="radio" name="player-two" id="player-two-x" class="X">
-                <label for="player-two-o">O</label>
-                <input type="radio" name="player-two" id="player-two-o" class="O">
+            <div>
+                <h3 class="form-h3-two">Player two</h3>
+                <div class="player-election">
+                    <input type="radio" name="player-two" id="player-two-belgrano" class="belgrano" required>
+                    <label for="player-two-belgrano"><img src="assets/img/belgrano.webp" alt=""></label>
+                    <input type="radio" name="player-two" id="player-two-boca" class="boca" checked required>
+                    <label for="player-two-boca"><img src="assets/img/boca.webp" alt=""></label>
+                    <input type="radio" name="player-two" id="player-two-central" class="central" required>
+                    <label for="player-two-central"><img src="assets/img/central.webp" alt=""></label>
+                    <input type="radio" name="player-two" id="player-two-independiente" class="independiente" required>
+                    <label for="player-two-independiente"><img src="assets/img/independiente.webp" alt=""></label>
+                    <input type="radio" name="player-two" id="player-two-newells" class="newells" required>
+                    <label for="player-two-newells"><img src="assets/img/newells.webp" alt=""></label>
+                    <input type="radio" name="player-two" id="player-two-racing" class="racing" required>
+                    <label for="player-two-racing"><img src="assets/img/racing.webp" alt=""></label>
+                    <input type="radio" name="player-two" id="player-two-river" class="river" required>
+                    <label for="player-two-river"><img src="assets/img/river.webp" alt=""></label>
+                    <input type="radio" name="player-two" id="player-two-sanlorenzo" class="sanlorenzo" required>
+                    <label for="player-two-sanlorenzo"><img src="assets/img/sanlorenzo.webp" alt=""></label>
+                    <input type="radio" name="player-two" id="player-two-talleres" class="talleres" required>
+                    <label for="player-two-talleres"><img src="assets/img/talleres.webp" alt=""></label>
+                </div>
+                <div class="player-or-cpu">
+                    <input type="radio" name="manage-two" id="two-player" class="Player">
+                    <label for="two-player">Player</label>
+                    <input type="radio" name="manage-two" id="two-cpu" class="CPU" checked>
+                    <label for="two-cpu">CPU</label>
+                </div>
             </div>
-            <div class="player-or-cpu-two">
-                <label for="two-player">Player</label>
-                <input type="radio" name="manage-two" id="two-player" class="Player">
-                <label for="two-cpu">CPU</label>
-                <input type="radio" name="manage-two" id="two-cpu" class="CPU">
+            <div class="btn-play-container">
+                <button type="submit" id="btn-play">PLAY</button>
             </div>
-            <button type="submit" id="btn-play">PLAY</button>
         </form>
     </section>
     <main>
         <section class="grid-container">
             <ul class="row1">
-                <li class="grid-cell r1c1"></li>
-                <li class="grid-cell r1c2"></li>
-                <li class="grid-cell r1c3"></li>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
             <ul class="row2">
-                <li class="grid-cell r2c1"></li>
-                <li class="grid-cell r2c2"></li>
-                <li class="grid-cell r2c3"></li>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
             <ul class="row3">
-                <li class="grid-cell r3c1"></li>
-                <li class="grid-cell r3c2"></li>
-                <li class="grid-cell r3c3"></li>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
         </section>
     </main>

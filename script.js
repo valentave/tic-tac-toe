@@ -6,7 +6,7 @@ const playerOneElection = document.getElementsByName("player-one");
 const playerTwoElection = document.getElementsByName("player-two");
 const playerOneManage = document.getElementsByName("manage-one");
 const playerTwoManage = document.getElementsByName("manage-two");
-const gridCells = document.querySelectorAll(".grid-cell");
+const gridCells = document.querySelectorAll(".grid-container > ul > li");
 const gameBoard = Array.from(gridCells).reduce((acc, cell, index) => {
     const rowIndex = Math.floor(index / 3);
     const colIndex = index % 3;
@@ -45,9 +45,9 @@ function isThereAWinner() {
         const [row3, col3] = combo[2];
     
         if (
-            gameBoard[row1][col1].textContent !== "" &&
-            gameBoard[row1][col1].textContent === gameBoard[row2][col2].textContent &&
-            gameBoard[row1][col1].textContent === gameBoard[row3][col3].textContent
+            gameBoard[row1][col1].classList.value !== "" &&
+            gameBoard[row1][col1].classList.value === gameBoard[row2][col2].classList.value &&
+            gameBoard[row1][col1].classList.value === gameBoard[row3][col3].classList.value
         ) {
         // There is a winner
         return true;
@@ -71,19 +71,19 @@ function isCellFree(cell) {
 
 // Finish the game
 function finishGame(winner){
-    const resultContainer = document.createElement("div");
+    const resultContainer = document.createElement("section");
     resultContainer.classList.add("result-container");
     switch (winner) {
         case "tie":
             resultContainer.innerHTML = `
-                <p class="result">It's a tie!</p>
+                <h2 class="result">It's a tie!</h2>
                 <button class="btn-reset">Reset</button>
             `
             main.appendChild(resultContainer);
             break;
         default:
             resultContainer.innerHTML = `
-                <p class="result">The winner is ${winner}!</p>
+                <h2 class="result">The winner is ${winner}!</h2>
                 <button class="btn-reset">Reset</button>
             `
             main.appendChild(resultContainer);
@@ -95,7 +95,10 @@ function finishGame(winner){
 // Play a turn
 function playTurn(choice, cell) {
     if (isCellFree(cell)) {
-        cell.textContent = choice;
+        cell.innerHTML = `
+        <img src="assets/img/${choice}.webp">
+        `
+        cell.classList.add(choice);
         game.updateTurn();
         switch (isGameOver()) {
             case 0: // it's a tie
@@ -196,7 +199,7 @@ form.addEventListener("submit", function (event) {
         alert("Both players cannot be CPU.");
         return;
     } else {
-        form.classList.add("hidden");
+        form.parentNode.classList.add("hidden");
     }
 
     // If the first turn should be CPU's, play CPU's turn
@@ -206,6 +209,8 @@ form.addEventListener("submit", function (event) {
     // Start the game
     playGame();
   });
+
+
 
 
 // Play the Tic Tac Toe game
@@ -234,3 +239,4 @@ function playGame() {
         }
     });
 }
+
